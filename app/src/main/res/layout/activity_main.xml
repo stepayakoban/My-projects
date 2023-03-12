@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/dialogue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="ShowDialog"
+        android:text="Dialog"
+        app:layout_constraintBottom_toTopOf="@+id/ListB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.272" />
+
+    <Button
+        android:id="@+id/CheckB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check"
+        android:onClick="CheckClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DateP"
+        app:layout_constraintVertical_bias="0.276" />
+
+    <Button
+        android:id="@+id/DateP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:onClick="DateClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TimeP"
+        app:layout_constraintVertical_bias="0.194" />
+
+    <Button
+        android:id="@+id/TimeP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:onClick="TimeClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ListB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="ListClick"
+        android:text="LIst"
+        app:layout_constraintBottom_toTopOf="@+id/TimeP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Fragments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="FragClick"
+        android:text="Fragment"
+        app:layout_constraintBottom_toTopOf="@+id/TimeP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ListB" />
+
+    <Button
+        android:id="@+id/File"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="FileClick"
+        android:text="File"
+        app:layout_constraintBottom_toTopOf="@+id/ListB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogue" />
+
+    <Button
+        android:id="@+id/BD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="BdClick"
+        android:text="BD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CheckB" />
+</androidx.constraintlayout.widget.ConstraintLayout>
