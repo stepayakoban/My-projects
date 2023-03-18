@@ -69,14 +69,15 @@
 
     <Button
         android:id="@+id/Fragments"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="131dp"
+        android:layout_height="40dp"
         android:onClick="FragClick"
         android:text="Fragment"
         app:layout_constraintBottom_toTopOf="@+id/TimeP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ListB" />
+        app:layout_constraintTop_toBottomOf="@+id/ListB"
+        app:layout_constraintVertical_bias="0.224" />
 
     <Button
         android:id="@+id/File"
@@ -99,4 +100,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CheckB" />
+
+    <Button
+        android:id="@+id/jso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="jsoClick"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/TimeP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Fragments" />
 </androidx.constraintlayout.widget.ConstraintLayout>

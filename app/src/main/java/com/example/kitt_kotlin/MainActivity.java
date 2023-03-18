@@ -74,5 +74,10 @@ public class MainActivity extends AppCompatActivity {
         Intent i=new Intent(MainActivity.this, bd_activity.class);
         startActivity(i);
     }
+    public void jsoClick(View view){
+        Intent i=new Intent(MainActivity.this, json.class);
+        startActivity(i);
+    }
+
 }
 

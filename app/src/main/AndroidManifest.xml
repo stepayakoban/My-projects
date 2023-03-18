@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Kitt_Kotlin"
         tools:targetApi="31">
         <activity
+            android:name=".json"
+            android:exported="false" />
+        <activity
             android:name=".bd_activity"
             android:exported="false" />
         <activity
