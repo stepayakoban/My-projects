@@ -1,7 +1,7 @@
-package com.example.kitt_kotlin;
+package com.example.kitt_kotlin
 
-public class Kitt_FragBuilder {
-    public Kitt_Frag createKitt_Frag() {
-        return new Kitt_Frag();
+class Kitt_FragBuilder {
+    fun createKitt_Frag(): Kitt_Frag {
+        return Kitt_Frag()
     }
 }

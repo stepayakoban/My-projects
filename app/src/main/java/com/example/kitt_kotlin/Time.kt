@@ -1,55 +1,37 @@
-package com.example.kitt_kotlin;
+@file:Suppress("DEPRECATION", "FunctionName")
 
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.kitt_kotlin
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.TimePicker;
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.TextView
+import android.widget.TimePicker
+import androidx.appcompat.app.AppCompatActivity
 
-public class Time extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_time);
-        TimePicker   mTimePicker = findViewById(R.id.timePicker);
-
-
-
-        mTimePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
-
-        @Override
-
-        public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-
-            TextView myTextView = (TextView) findViewById(R.id.timeTextView);
-
-
-            myTextView.setText("Время: " + hourOfDay + ":" + minute);
-
+class Time : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_time)
+        val mTimePicker = findViewById<TimePicker>(R.id.timePicker)
+        mTimePicker.setOnTimeChangedListener { _, hourOfDay, minute ->
+            val myTextView = findViewById<View>(R.id.timeTextView) as TextView
+            myTextView.text = "Время: $hourOfDay:$minute"
         }
+        val timeButton = findViewById<Button>(R.id.timebutton)
+        timeButton.setOnClickListener {
+            val myTextView = findViewById<View>(R.id.timeTextView) as TextView
+            myTextView.text = StringBuilder()
+                    .append(mTimePicker.currentHour).append(":")
+                    .append(mTimePicker.currentMinute)
+        }
+    }
 
-    });
-        Button timeButton = findViewById(R.id.timebutton);
-        timeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView myTextView = (TextView) findViewById(R.id.timeTextView);
-                myTextView.setText(new StringBuilder()
-                        .append(mTimePicker.getCurrentHour()).append(":")
-                        .append(mTimePicker.getCurrentMinute()));
-            }
-        });
-}
-
-    public void BackClick(View view){
-        Intent i=new Intent(Time.this,MainActivity.class);
-        startActivity(i);
-
-    };
-
-
+    fun BackClick() {
+        val i = Intent(this@Time, MainActivity::class.java)
+        startActivity(i)
+    }
 }

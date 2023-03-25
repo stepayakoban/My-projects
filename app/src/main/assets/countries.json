@@ -1,0 +1,39 @@
+[  {
+		"flag_url" : "tw.jpg",
+		"name_ru" : "Китайская Республика",
+		"iso_code2" : "TW",
+		"iso_code3" : "TWN"
+	}, {
+		"flag_url" : "cn.jpg",
+		"name_ru" : "КНР",
+		"iso_code2" : "CN",
+		"iso_code3" : "CHN"
+	},  {
+		"flag_url" : "md.jpg",
+		"name_ru" : "Молдавия",
+		"iso_code2" : "MD",
+		"iso_code3" : "MDA"
+	},  {
+		"flag_url" : "ru.jpg",
+		"name_ru" : "Россия",
+		"iso_code2" : "RU",
+		"iso_code3" : "RUS"
+	},  {
+		"flag_url" : "sg.jpg",
+		"name_ru" : "Сингапур",
+		"iso_code2" : "SG",
+		"iso_code3" : "SGP"
+	}, 
+	 {
+		"flag_url" : "uk.jpg",
+		"name_ru" : "Украина",
+		"iso_code2" : "UA",
+		"iso_code3" : "UKR"
+	 },
+ {
+		"flag_url" : "jp.jpg",
+		"name_ru" : "Япония",
+		"iso_code2" : "JP",
+		"iso_code3" : "JPN"
+	}
+]

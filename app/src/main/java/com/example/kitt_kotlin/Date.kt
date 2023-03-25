@@ -1,59 +1,36 @@
-package com.example.kitt_kotlin;
+package com.example.kitt_kotlin
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.DatePicker
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
-import android.content.Intent;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
+class Date : AppCompatActivity() {
+    @SuppressLint("SetTextI18n", "CutPasteId")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_date)
+        val datePicker1 = findViewById<DatePicker>(R.id.datePicker1)
+        datePicker1.init(2023, 1, 1) { view, year, monthOfYear, dayOfMonth ->
+            val dateTextView1 = findViewById<TextView>(R.id.dateTextView)
+            dateTextView1.text = "Дата: " + dayOfMonth + "/" + monthOfYear + 1 + "/" + year
+        }
+        val changingDateButton = findViewById<View>(R.id.date1B) as Button
+        changingDateButton.setOnClickListener {
+            val myTextView = findViewById<View>(R.id.dateTextView) as TextView
+            myTextView.text = StringBuilder()
+                    .append(datePicker1.dayOfMonth).append(".")
+                    .append(datePicker1.month + 1).append(".")
+                    .append(datePicker1.year)
+        }
+    }
 
-public class Date extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_date);
-        DatePicker datePicker1=findViewById(R.id.datePicker1);
-        datePicker1.init(2023, 01, 01, new DatePicker.OnDateChangedListener() {
-
-            @Override
-
-            public void  onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-
-
-                TextView dateTextView1=findViewById(R.id.dateTextView);
-
-                dateTextView1.setText("Дата: " + dayOfMonth + "/" + monthOfYear + 1 + "/" + year);
-
-
-
-
-            }
-
-        });
-        Button changingDateButton = (Button) findViewById(R.id.date1B);
-        changingDateButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                TextView myTextView = (TextView) findViewById(R.id.dateTextView);
-                myTextView.setText(new StringBuilder()
-
-                        .append(datePicker1.getDayOfMonth()).append(".")
-                        .append(datePicker1.getMonth() + 1).append(".")
-                        .append(datePicker1.getYear()));
-            }
-        });
-            }
-
-
-
-    public void BackClick1(View view){
-        Intent i=new Intent(Date.this,MainActivity.class);
-        startActivity(i);
-
-    };
+    fun BackClick1() {
+        val i = Intent(this@Date, MainActivity::class.java)
+        startActivity(i)
+    }
 }
