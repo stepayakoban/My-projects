@@ -1,10 +1,10 @@
 package com.example.kitt_kotlin
 
 import android.content.Context
-import android.database.SQLException
+
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.os.Build
+
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -16,7 +16,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null
     private var mNeedUpdate = false
 
     init {
-        if (Build.VERSION.SDK_INT >= 17) DB_PATH = context.applicationInfo.dataDir + "/databases/" else DB_PATH = "/data/data/" + context.packageName + "/databases/"
+        DB_PATH = context.applicationInfo.dataDir + "/databases/"
         mContext = context
         copyDataBase()
         this.readableDatabase
@@ -61,11 +61,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null
         mInput.close()
     }
 
-    @Throws(SQLException::class)
-    fun openDataBase(): Boolean {
-        mDataBase = SQLiteDatabase.openDatabase(DB_PATH + DB_NAME, null, SQLiteDatabase.CREATE_IF_NECESSARY)
-        return mDataBase != null
-    }
+
 
     @Synchronized
     override fun close() {
@@ -79,7 +75,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null
     }
 
     companion object {
-        private const val DB_NAME = "auto.db"
+        private const val DB_NAME = "Anime.db"
         private var DB_PATH = ""
         private const val DB_VERSION = 1
     }

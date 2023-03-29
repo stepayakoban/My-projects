@@ -1,3 +1,5 @@
+
+
 package com.example.kitt_kotlin
 
 import android.database.SQLException
@@ -30,33 +32,38 @@ class bd_activity : AppCompatActivity() {
         }
         button = findViewById<View>(R.id.button) as Button
         button!!.setOnClickListener {
-            var auto = "auto"
-            val cursor = mDb?.rawQuery("SELECT * FROM automobil", null)
+            var anime = ""
+            val cursor = mDb?.rawQuery("SELECT * FROM animas", null)
             cursor?.moveToFirst()
             while (!cursor?.isAfterLast!!) {
-                auto += cursor.getString(1) + " | "
+                anime += cursor.getString(1) + " | "
                 cursor.moveToNext()
             }
             cursor.close()
         }
-        val autos = ArrayList<HashMap<String, Any?>>()
-        var auto: HashMap<String, Any?>
-        val cursor = mDb?.rawQuery("SELECT * FROM automobil", null)
+        val animes = ArrayList<HashMap<String, Any?>>()
+        var anime: HashMap<String, Any?>
+        val cursor = mDb?.rawQuery("SELECT * FROM animas", null)
         cursor!!.moveToFirst()
         while (!cursor.isAfterLast) {
-            auto = HashMap()
-            auto["name"] = cursor.getString(1)
-            auto["color"] = cursor.getString(2)
-            auto["year"] = cursor.getString(3)
-            auto["price"] = cursor.getString(4)
-            autos.add(auto)
+            anime = HashMap()
+            anime["title"] = cursor.getString(1)
+            anime["genre"] = cursor.getString(2)
+            anime["year"] = cursor.getString(3)
+
+            animes.add(anime)
             cursor.moveToNext()
         }
         cursor.close()
-        val from = arrayOf("name", "color", "year", "price")
-        val to = intArrayOf(R.id.textView, R.id.textView2, R.id.textView3, R.id.textView4)
-        val adapter = SimpleAdapter(this, autos, R.layout.adapter_item, from, to)
-        val listView = findViewById<View>(R.id.listView) as ListView
+
+
+        val from = arrayOf( "title", "genre","year")
+        val to = intArrayOf( R.id.name_text_view, R.id.genre_text_view,R.id.year_text_view)
+
+
+        val adapter = SimpleAdapter(this, animes, R.layout.adapter_item, from, to)
+        val listView = findViewById<ListView>(R.id.listView)
         listView.adapter = adapter
+
     }
 }

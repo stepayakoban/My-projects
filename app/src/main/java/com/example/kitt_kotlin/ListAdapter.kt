@@ -16,14 +16,10 @@ class ListAdapter(private val mContext: Context, items: List<ListItem?>?) : Arra
         val currentItem = getItem(position)
         val nameTextView = listItemView!!.findViewById<View>(R.id.name_text_view) as TextView
         nameTextView.text = currentItem!!.name
-        val iso3 = listItemView.findViewById<View>(R.id.iso3_text_view) as TextView
-        iso3.text = currentItem.flag
-        val isoTextView = listItemView.findViewById<View>(R.id.iso_text_view) as TextView
-        isoTextView.text = currentItem.isocode2
-        val iso1TextView = listItemView.findViewById<View>(R.id.iso1_text_view) as TextView
-        iso1TextView.text = currentItem.isocode3
-        val iso3TextView = listItemView.findViewById<View>(R.id.iso2_text_view) as TextView
-        iso3TextView.text = currentItem.isocode4
+        val genreTextView = listItemView.findViewById<View>(R.id.genre_text_view) as TextView
+        genreTextView.text = currentItem.genre
+        val yearTextView = listItemView.findViewById<View>(R.id.year_text_view) as TextView
+        yearTextView.text = currentItem.year
         return listItemView
     }
 }
